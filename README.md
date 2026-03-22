@@ -18,7 +18,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ---
 
-## 🛠️ Tools & Technologies
+##  Tools & Technologies
 
 * **Python** 
 * **Excel** (Pivot Tables, Charts)
@@ -27,7 +27,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ---
 
-## 📂 Dataset
+##  Dataset
 
 * The dataset contains sales transaction details such as:
 
@@ -38,7 +38,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ---
 
-## 📊 Key Analysis Performed
+##  Key Analysis Performed
 
 ### 1. Data Cleaning
 
@@ -79,7 +79,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ---
 
-## 📈 Key Insights
+##  Key Insights
 
 * Sales follow a **seasonal pattern**
 * Early-year months show **low demand**
@@ -91,7 +91,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ---
 
-## 📊 Dashboard (Power BI)
+##  Dashboard (Power BI)
 
 * Interactive visualizations including:
 
@@ -101,7 +101,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ---
 
-## 🚀 How to Run the Project
+##  How to Run the Project
 
 ### Python
 
@@ -120,7 +120,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ---
 
-## 📌 Future Improvements
+##  Future Improvements
 
 * Add advanced forecasting models
 * Include customer segmentation
@@ -128,7 +128,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ---
 
-## 👤 Author
+##  Author
 
 **Raj Roshan**
 

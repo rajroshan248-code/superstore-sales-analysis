@@ -1,0 +1,111 @@
+# File name
+sales_trend_analysis.py
+
+Installs Required
+%pip install seaborn
+
+# Import Required Libraries
+  
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import glob
+
+# Load Dataset
+df = pd.read_csv("train.csv")
+
+# Understand the Data
+
+df.head()        # first 5 rows
+df.tail()        # last 5 rows
+df.shape         # rows & columns
+df.columns       # column names
+df.info()        # data types
+df.describe()    # summary stats
+
+# Data Cleaning
+
+* Check missing values
+  df.isnull().sum()
+* Handle missing values
+  df.fillna(0, inplace=True)
+* Remove duplicates
+  df.drop_duplicates(inplace=True)
+
+# Data Transformation
+
+df['Order Date'] = pd.to_datetime(df['Order Date'], errors='coerce' )
+df['Order Date' ] = pd.to_datetime(df['Order Date'], format='%m/%d/%Y' )
+df['Order Date'] = pd.to_datetime(df['Order Date'], dayfirst=True, errors='coerce' )
+df['Order Date'] = pd.to_datetime(df['Order Date'])
+df['Year'] = df['Order Date'].dt.year
+df['Month'] = df['Order Date'].dt.month
+
+# To Find Total Sales
+total_sales = df['Sales'].sum()
+print(total_sales)
+
+# Region-wise Sales
+region_sales = df.groupby('Region')['Sales'].sum().reset_index()
+print(region_sales)
+
+# To Find out Top 10 Products
+
+* Group by product and sum sales
+product_sales = df.groupby('Product Name')['Sales'].sum().reset_index()
+* Sort by sales in descending order
+product_sales = product_sales.sort_values(by='Sales', ascending=False)
+* Select top 10 products
+top10_products = product_sales.head(10)
+print(top10_products)
+
+# Bar Chart (Region-wise Sales)
+sns.barplot(x='Region', y='Sales', data=region_sales)
+plt.title("Region-wise Sales")
+plt.show()
+
+# Line Chart (Monthly Sales Trend)
+monthly_sales = df.groupby('Month')['Sales'].sum()
+monthly_sales.plot()
+plt.title("Monthly Sales Trend")
+plt.show()
+
+# Top 10 Products
+top_products = product_sales.head(10)
+
+top_products.plot(kind='bar')
+plt.title("Top 10 Products")
+plt.show()
+
+# Moving Average Forecast
+monthly_sales = df.groupby(pd.Grouper(key='Order Date', freq='ME'))['Sales'].sum().reset_index()
+
+monthly_sales['Forecast'] = monthly_sales['Sales'].rolling(window=3).mean()
+
+plt.figure()
+plt.plot(monthly_sales['Order Date'], monthly_sales['Sales'])
+plt.plot(monthly_sales['Order Date'], monthly_sales['Forecast'])
+plt.xlabel("Date")
+plt.ylabel("Sales")
+plt.title("Sales Forecast (Moving Average)")
+plt.show()
+
+# ARIMA Model
+from statsmodels.tsa.arima.model import ARIMA
+
+model = ARIMA(monthly_sales['Sales'], order=(1,1,1))
+fit = model.fit()
+
+monthly_sales['Forecast_ARIMA'] = fit.predict(start=0, end=len(monthly_sales)-1)
+
+# Plot
+plt.figure()
+plt.plot(monthly_sales['Order Date'], monthly_sales['Sales'])
+plt.plot(monthly_sales['Order Date'], monthly_sales['Forecast_ARIMA'])
+plt.title("ARIMA Forecast")
+plt.show()
+
+
+
+

@@ -1,6 +1,6 @@
-# 📊 Sales Data Analysis & Forecasting Project
+#  Sales Data Analysis & Forecasting Project
 
-## 📌 Project Overview
+##  Project Overview
 
 This project focuses on analyzing historical sales data to identify trends, patterns, and key business insights. It also includes forecasting future sales using analytical techniques.
 
@@ -8,7 +8,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 * Analyze sales trends over time
 * Identify seasonal patterns in sales
@@ -20,7 +20,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ## 🛠️ Tools & Technologies
 
-* **Python** (Pandas, Matplotlib, Seaborn)
+* **Python** 
 * **Excel** (Pivot Tables, Charts)
 * **SQL** (Data querying and transformation)
 * **Power BI** (Dashboard & Visualization)
@@ -52,17 +52,24 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 * Region-wise sales contribution
 * Identification of highest and lowest sales periods
 
-### 3. Seasonal Trend Analysis
+### 3. Next 7 Days Sales Forecast
+
+* Sales are low on **31st December**, followed by a **sharp spike on 1st January**, indicating strong New Year demand
+* A **gradual decline from 2nd to 5th January** reflects reduced post-holiday activity
+* A **significant surge on 6th January** suggests delayed or event-driven purchases
+* Overall trend highlights **seasonal and event-driven fluctuations in sales**
+
+### 4. Seasonal Trend Analysis
 
 * Sales decrease from **November to February**
 * Gradual increase from **March onwards**
-* Peak sales observed in **August**
+* Peak sales observed in **September**
 
-### 4. Region-wise Analysis
+### 5. Region-wise Analysis
 
 * Maximum sales recorded in **Western region (~31.4%)**
 
-### 5. Forecasting
+### 6. Forecasting
 
 * Predicted sales for next 7 days using time-series approach
 * Example forecast insights:
@@ -76,7 +83,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 * Sales follow a **seasonal pattern**
 * Early-year months show **low demand**
-* Mid-year growth leads to **peak performance in August**
+* Mid-year growth leads to **peak performance in September**
 * Businesses should:
 
   * Optimize strategies during low-demand periods
@@ -109,17 +116,13 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
    python analysis.py
    ```
 
-### Power BI
 
-1. Open `.pbix` file
-2. Load dataset
-3. Refresh data
 
 ---
 
 ## 📌 Future Improvements
 
-* Add advanced forecasting models (ARIMA / Prophet)
+* Add advanced forecasting models
 * Include customer segmentation
 * Automate dashboard updates
 
@@ -127,8 +130,7 @@ The analysis is performed using **Python, Excel, SQL, and Power BI**, providing 
 
 ## 👤 Author
 
-**Raj**
-Aspiring Data Analyst
+**Raj Roshan**
 
 ---
 
